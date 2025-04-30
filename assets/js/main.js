@@ -1,29 +1,40 @@
 window.addEventListener('load', () => {
   const container = document.querySelector('.container-images');
-  const track = container; // für Klarheit
-  const images = track.innerHTML;
+  const originalContent = container.innerHTML;
+
+  // 🔁 Dupliziere für visuelles Endlos-Scrolling
+  container.innerHTML += originalContent;
+
   let currentOffset = 0;
   let isHoveringImage = false;
   let isHoveringLink = false;
-  let scrollSpeed = 1.2;
+  const scrollSpeed = 1.3;
 
-  // 🔁 Verdopple die Bilder für Endlos-Loop
-  track.innerHTML += images;
-
-  // 🌀 Endlos-Scroll-Loop
+  // 🔁 Auto-Scroll-Loop
   function autoScroll() {
     if (!isHoveringImage && !isHoveringLink) {
       currentOffset += scrollSpeed;
-      if (currentOffset >= track.scrollHeight / 2) {
-        currentOffset = 0; // Zurück an den Anfang
+      container.style.transform = `translateY(-${currentOffset}px)`;
+
+      // 🔁 Wenn duplizierter Teil erreicht → zurück auf 0, visuell nahtlos
+      const halfHeight = container.scrollHeight / 2;
+      if (currentOffset >= halfHeight) {
+        currentOffset = 0;
+        container.style.transition = 'none'; // kein Sprung sichtbar
+        container.style.transform = `translateY(0)`;
+
+        // Trick: transition wieder aktivieren nach 1 Frame
+        requestAnimationFrame(() => {
+          container.style.transition = '';
+        });
       }
-      track.style.transform = `translateY(-${currentOffset}px)`;
     }
+
     requestAnimationFrame(autoScroll);
   }
   autoScroll();
 
-  // 📋 Detail-Anzeige bei Bild-Hover
+  // 🔍 Detail-Anzeige beim Bild-Hover
   const previewItems = document.querySelectorAll('.preview-image-item');
   const projectDetails = document.getElementById('project-details');
   const detailTitle = document.getElementById('detail-title');
@@ -45,7 +56,7 @@ window.addEventListener('load', () => {
     });
   });
 
-  // 🧭 Springe zum Bild bei Hover auf Link
+  // 🧭 Bei Link-Hover: springe zum passendem Bild
   document.querySelectorAll('.link-list-item').forEach(link => {
     link.addEventListener('mouseenter', () => {
       const title = link.dataset.title;
@@ -55,14 +66,14 @@ window.addEventListener('load', () => {
 
         const imageOffset = imageEl.offsetTop;
         currentOffset = imageOffset;
-        track.style.transition = 'transform 0.6s ease';
-        track.style.transform = `translateY(-${imageOffset}px)`;
+        container.style.transition = 'transform 0.6s ease';
+        container.style.transform = `translateY(-${imageOffset}px)`;
       }
     });
 
     link.addEventListener('mouseleave', () => {
       isHoveringLink = false;
-      track.style.transition = '';
+      container.style.transition = '';
     });
   });
 });
