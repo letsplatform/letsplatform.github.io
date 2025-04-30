@@ -129,7 +129,12 @@ p {
 .container-images {
     display: flex;
     flex-direction: column;
-    animation: images-moving-up 100s linear infinite;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+
+.container-images.paused {
+    animation-play-state: paused;
 }
 
 .images-preview{
@@ -144,8 +149,11 @@ p {
     0% {
         transform: translateY(0);
       }
-      100% {
-        transform: translateY(-100%);
+      50% {
+        transform: translateY(-95%);
+      }
+    100%{
+        transform: translateY(0);
     }
 }
 
