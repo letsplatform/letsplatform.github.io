@@ -6,6 +6,10 @@
 @font-face {
     font-family: GapSansBold;
     src: url(/assets/fonts/gapsansblack-webfont.woff2);
+}
 
+@font-face {
+    font-family: DejaVuSans;
+    src: url(/assets/fonts/DejaVuSans.woff);
 }
 

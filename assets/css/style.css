@@ -16,10 +16,13 @@ html {
     --color3: rgb(123, 123, 123);
     --font1: GapSans; 
     --font2: GapSansBold;
+    --font3: DejaVuSans;
 }
 
 body{
     background-color: var(--color2);
+    border: 2px solid black;
+    position: fixed;
 }
 
 a{
@@ -40,7 +43,7 @@ li{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 2px solid black;
+    overflow-y: scroll;
 }
 
 h1, p, h2, ul {
@@ -57,19 +60,19 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding-bottom: 20px;
     padding-top: 20px;
-    text-indent: 25px;
+    margin-left: 25px;
     letter-spacing: 10%;
 }
 
 p {
     font-size: 1rem;
     line-height: 1.3;
-    font-family: Helvetica, Arial, sans-serif;
-    letter-spacing: 0.02rem;
-    word-spacing: -0.1rem;
+    font-family: var(--font3), Arial, Helvetica, sans-serif;
+    letter-spacing: -1%;
+    word-spacing: -10%;
 }
 
 .link-list{
@@ -91,12 +94,13 @@ p {
     padding: 20px;
     width: 50vw;
     background-color: var(--color2);
-    height: 70vh;
+    height: 75vh;
     opacity: 0;
     transition: opacity 0.3s ease;
     border-top: 2px solid var(--color1);
     border-left: 2px solid var(--color1);
     border-right: 2px solid var(--color1);
+    overflow-y: scroll;
 }
 
 .link-list-item:hover + .container-project-details  {
@@ -121,10 +125,13 @@ sup {
     text-transform: uppercase;
     margin-left: -12px;
     letter-spacing: 5%;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font3), Arial, Arial, Helvetica, sans-serif;
 }
 
-
+.bottom-section{
+    background-color: var(--color2);
+    z-index: 10;
+}
 /*IMAGES*/
 .section-preview-images{
     display: flex;
