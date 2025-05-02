@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     pointer-events: auto;
-    hyphens: auto;
 }
 
 html {
@@ -74,6 +73,12 @@ p {
     font-family: var(--font3), Arial, Helvetica, sans-serif;
     letter-spacing: -1%;
     word-spacing: -10%;
+    hyphens: auto;
+}
+
+.nowrap{
+    hyphens: none;
+    word-break:keep-all;
 }
 
 .link-list{
@@ -127,6 +132,8 @@ sup {
     margin-left: -12px;
     letter-spacing: 5%;
     font-family: var(--font3), Arial, Arial, Helvetica, sans-serif;
+    hyphens: none;
+    word-break:keep-all;
 }
 
 .bottom-section{
