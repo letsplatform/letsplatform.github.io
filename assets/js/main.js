@@ -34,24 +34,21 @@ window.addEventListener('load', () => {
   }
   autoScroll();
 
-  // Detail-Anzeige beim Bild-Hover
   const previewItems = document.querySelectorAll('.preview-image-item');
   const projectDetails = document.getElementById('project-details');
   const detailTitle = document.getElementById('detail-title');
   const detailAuthor = document.getElementById('detail-author');
   const detailDescription = document.getElementById('detail-description');
-
+  
   previewItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
-      isHoveringImage = true;
-      detailTitle.innerHTML = `${item.dataset.title}&nbsp;<sup>(Let’s&nbsp;Platform)</sup>`;
       detailAuthor.textContent = item.dataset.author;
-      detailDescription.textContent = item.dataset.description;
+      detailTitle.innerHTML = `${item.dataset.title}&nbsp;<sup>(Let’s&nbsp;Platform)</sup>`
+      detailDescription.innerHTML = item.dataset.descriptionHtml; // wichtig!
       projectDetails.classList.add('visible');
     });
-
+  
     item.addEventListener('mouseleave', () => {
-      isHoveringImage = false;
       projectDetails.classList.remove('visible');
     });
   });

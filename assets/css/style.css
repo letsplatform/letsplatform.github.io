@@ -107,6 +107,10 @@ p {
     text-indent: 25px;
 }
 
+#detail-description p:nth-of-type(n+2) {
+    text-indent: 25px;
+  }
+
 .headline-projects{
     padding-bottom: 10px;
 }
