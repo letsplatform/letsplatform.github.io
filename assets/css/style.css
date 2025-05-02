@@ -6,11 +6,12 @@
 }
 
 html {
-    font-size: 16px;
     scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 :root {
+    font-size: 16px;
     --color1: #000000;
     --color2: rgb(223, 223, 223);
     --color3: rgb(123, 123, 123);
@@ -22,7 +23,6 @@ html {
 body{
     background-color: var(--color2);
     border: 2px solid black;
-    position: fixed;
 }
 
 a{
@@ -191,4 +191,10 @@ sup {
 
 .container-project-details.visible {
     opacity: 1;
+}
+
+@media screen and (min-width: 1920px){
+    :root{
+        font-size: 23px;
+    }
 }
