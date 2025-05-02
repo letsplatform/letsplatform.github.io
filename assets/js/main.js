@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
   let currentOffset = 0;
   let isHoveringImage = false;
   let isHoveringLink = false;
-  const scrollSpeed = 1.3;
+  const scrollSpeed = 1.4;
 
   // 🔁 Auto-Scroll-Loop
   function autoScroll() {
@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
   }
   autoScroll();
 
-  // 🔍 Detail-Anzeige beim Bild-Hover
+  // Detail-Anzeige beim Bild-Hover
   const previewItems = document.querySelectorAll('.preview-image-item');
   const projectDetails = document.getElementById('project-details');
   const detailTitle = document.getElementById('detail-title');
@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
   previewItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
       isHoveringImage = true;
-      detailTitle.textContent = item.dataset.title;
+      detailTitle.innerHTML = `${item.dataset.title}&nbsp;<sup>(Let’s&nbsp;Platform)</sup>`;
       detailAuthor.textContent = item.dataset.author;
       detailDescription.textContent = item.dataset.description;
       projectDetails.classList.add('visible');

@@ -111,6 +111,13 @@ p {
     padding-bottom: 10px;
 }
 
+sup{
+    font-size: 16%;
+    word-break: none;
+    text-transform: uppercase;
+    margin-left: -12px;
+}
+
 
 /*IMAGES*/
 .section-preview-images{
