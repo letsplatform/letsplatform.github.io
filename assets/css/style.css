@@ -97,12 +97,13 @@ p {
     position: fixed;
     top: 0;
     left:0;
-    padding: 20px;
     width: 50vw;
     height: 75vh;
     opacity: 0;
     transition: opacity 0.3s ease;
     margin: 0;
+    padding: 30px;
+    padding-top: 20px;
 }
 
 .link-list-item:hover + .container-project-details  {
