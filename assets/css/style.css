@@ -54,7 +54,7 @@ h1, p, h2, ul {
 
 h1 {
     font-size: 5rem;
-    letter-spacing: 2%;
+    letter-spacing: 0.1rem;
     line-height: 0.9;
     font-family: var(--font2);
 }
@@ -64,7 +64,7 @@ h2 {
     padding-bottom: 20px;
     padding-top: 20px;
     margin-left: 25px;
-    letter-spacing: 12%;
+    letter-spacing: 0.15rem;
 }
 
 p {
@@ -129,7 +129,7 @@ sup {
     word-break: none;
     text-transform: uppercase;
     margin-left: -12px;
-    letter-spacing: 5%;
+    letter-spacing: 0.05rem;
     font-family: var(--font3), Arial, Arial, Helvetica, sans-serif;
     hyphens: none;
     word-break: keep-all;
