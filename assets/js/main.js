@@ -16,14 +16,11 @@ window.addEventListener('load', () => {
       currentOffset += scrollSpeed;
       container.style.transform = `translateY(-${currentOffset}px)`;
 
-      // 🔁 Wenn duplizierter Teil erreicht → zurück auf 0, visuell nahtlos
       const halfHeight = container.scrollHeight / 2;
       if (currentOffset >= halfHeight) {
         currentOffset = 0;
-        container.style.transition = 'none'; // kein Sprung sichtbar
+        container.style.transition = 'none';
         container.style.transform = `translateY(0)`;
-
-        // Trick: transition wieder aktivieren nach 1 Frame
         requestAnimationFrame(() => {
           container.style.transition = '';
         });
@@ -34,43 +31,67 @@ window.addEventListener('load', () => {
   }
   autoScroll();
 
+  // 🔍 Elemente sammeln
   const previewItems = document.querySelectorAll('.preview-image-item');
+  const linkListItems = document.querySelectorAll('.link-list-item');
+  const containerText = document.querySelector('.container-text');
+
   const projectDetails = document.getElementById('project-details');
   const detailTitle = document.getElementById('detail-title');
   const detailAuthor = document.getElementById('detail-author');
   const detailDescription = document.getElementById('detail-description');
-  
+
+  // 🖼️ Bild-Hover: Detail anzeigen + Text ausblenden
   previewItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
+      isHoveringImage = true;
+
       detailAuthor.textContent = item.dataset.author;
-      detailTitle.innerHTML = `${item.dataset.title}&nbsp;<sup>(Let’s&nbsp;Platform)</sup>`
-      detailDescription.innerHTML = item.dataset.descriptionHtml; // wichtig!
+      detailTitle.innerHTML = `${item.dataset.title}&nbsp;<sup>(Let’s&nbsp;Platform)</sup>`;
+      detailDescription.innerHTML = item.dataset.descriptionHtml;
       projectDetails.classList.add('visible');
+
+      // 👉 container-text ausblenden
+      containerText.style.opacity = '0';
+      containerText.style.pointerEvents = 'none';
     });
-  
+
     item.addEventListener('mouseleave', () => {
+      isHoveringImage = false;
       projectDetails.classList.remove('visible');
+
+      // 👉 container-text wieder einblenden
+      containerText.style.opacity = '1';
+      containerText.style.pointerEvents = '';
     });
   });
 
-  // 🧭 Bei Link-Hover: springe zum passendem Bild
-  document.querySelectorAll('.link-list-item').forEach(link => {
+  // 🔗 Linkliste-Hover: Bild scrollen + Text ausblenden
+  linkListItems.forEach(link => {
     link.addEventListener('mouseenter', () => {
+      isHoveringLink = true;
+
       const title = link.dataset.title;
       const imageEl = document.querySelector(`.preview-image-item[data-title="${title}"]`);
       if (imageEl) {
-        isHoveringLink = true;
-
         const imageOffset = imageEl.offsetTop;
         currentOffset = imageOffset;
         container.style.transition = 'transform 0.6s ease';
         container.style.transform = `translateY(-${imageOffset}px)`;
       }
+
+      // 👉 container-text ausblenden
+      containerText.style.opacity = '0';
+      containerText.style.pointerEvents = 'none';
     });
 
     link.addEventListener('mouseleave', () => {
       isHoveringLink = false;
       container.style.transition = '';
+
+      // 👉 container-text wieder einblenden
+      containerText.style.opacity = '1';
+      containerText.style.pointerEvents = '';
     });
   });
 });

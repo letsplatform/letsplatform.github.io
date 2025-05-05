@@ -99,14 +99,12 @@ p {
     left:0;
     padding: 20px;
     width: 50vw;
-    background-color: var(--color2);
     height: 75vh;
     opacity: 0;
     transition: opacity 0.3s ease;
     border-top: 2px solid var(--color1);
     border-left: 2px solid var(--color1);
     border-right: 2px solid var(--color1);
-    overflow-y: scroll;
     margin: 0;
 }
 
@@ -138,7 +136,6 @@ sup {
 }
 
 .bottom-section{
-    background-color: var(--color2);
     z-index: 10;
 }
 /*IMAGES*/
@@ -203,6 +200,6 @@ sup {
 
 @media screen and (min-width: 1920px){
     :root{
-        font-size: 23px;
+        font-size: 24px;
     }
 }
