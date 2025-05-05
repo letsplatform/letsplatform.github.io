@@ -63,7 +63,7 @@ h2 {
     font-size: 1.4rem;
     padding-bottom: 20px;
     padding-top: 20px;
-    margin-left: 25px;
+    margin-left: 1.5rem;
     letter-spacing: 0.15rem;
 }
 
@@ -71,8 +71,8 @@ p {
     font-size: 1rem;
     line-height: 1.3;
     font-family: var(--font3), Arial, Helvetica, sans-serif;
-    letter-spacing: -1%;
-    word-spacing: -10%;
+    letter-spacing: -0.02rem;
+    word-spacing: -.03rem;
     hyphens: auto;
 }
 
@@ -112,11 +112,11 @@ p {
 }
 
 .container-body-text p:nth-child(n+2){
-    text-indent: 25px;
+    text-indent: 1.5rem;
 }
 
 #detail-description p:nth-of-type(n+2) {
-    text-indent: 25px;
+    text-indent: 1.5rem;
   }
 
 .headline-projects{
