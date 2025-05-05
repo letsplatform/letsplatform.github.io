@@ -102,8 +102,6 @@ p {
     height: 75vh;
     opacity: 0;
     transition: opacity 0.3s ease;
-    border-top: 2px solid var(--color1);
-    border-left: 2px solid var(--color1);
     margin: 0;
 }
 
