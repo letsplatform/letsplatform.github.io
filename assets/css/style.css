@@ -64,7 +64,7 @@ h2 {
     padding-bottom: 20px;
     padding-top: 20px;
     margin-left: 25px;
-    letter-spacing: 10%;
+    letter-spacing: 12%;
 }
 
 p {
@@ -107,6 +107,7 @@ p {
     border-left: 2px solid var(--color1);
     border-right: 2px solid var(--color1);
     overflow-y: scroll;
+    margin: 0;
 }
 
 .link-list-item:hover + .container-project-details  {
@@ -133,7 +134,7 @@ sup {
     letter-spacing: 5%;
     font-family: var(--font3), Arial, Arial, Helvetica, sans-serif;
     hyphens: none;
-    word-break:keep-all;
+    word-break: keep-all;
 }
 
 .bottom-section{
@@ -152,7 +153,14 @@ sup {
     align-items: flex-end;
     overflow-y: hidden;
     border: 2px solid black;
+    overflow: hidden;
+    overflow: -moz-hidden-unscrollable;
 }
+
+.section-preview-images::-webkit-scrollbar {
+    display: none;
+  }
+
 
 .container-images {
     display: flex;
