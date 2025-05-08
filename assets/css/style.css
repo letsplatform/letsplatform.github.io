@@ -202,6 +202,10 @@ sup {
     animation-play-state: paused;
 }
 
+.container-images:hover {
+    animation-play-state: paused;
+}
+
 .images-preview{
     width: 100%;
     height: auto;
