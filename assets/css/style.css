@@ -67,6 +67,7 @@ h2 {
     padding-top: 1.5rem;
     margin-left: 1.5rem;
     letter-spacing: 0.12rem;
+    hyphens: auto;
 }
 
 p {
@@ -79,7 +80,7 @@ p {
 
 .nowrap{
     hyphens: none;
-    word-break:keep-all;
+    word-break: keep-all;
 }
 
 .link-section{
@@ -178,7 +179,7 @@ sup {
     align-items: flex-end;
     overflow-y: hidden;
     border: 2px solid black;
-    overflow-y: scroll;
+    overflow-y: hidden;
     scrollbar-width: 0;
 }
 
@@ -189,7 +190,6 @@ sup {
 .section-preview-images::-webkit-scrollbar {
     display: none;
   }
-
 
 .container-images {
     display: flex;
