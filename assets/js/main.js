@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
 
   // 🔍 Elemente sammeln
   const previewItems = document.querySelectorAll('.preview-image-item');
-  const linkListItems = document.querySelectorAll('.link-list-item');
+  const linkListItems = document.querySelectorAll('.container-link-list-item');
   const containerText = document.querySelector('.container-text');
 
   const projectDetails = document.getElementById('project-details');
