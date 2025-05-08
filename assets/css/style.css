@@ -160,7 +160,7 @@ sup {
     text-transform: uppercase;
     margin-left: -20px;
     letter-spacing: 0.05rem;
-    font-family: var(--font3), Arial, Arial, Helvetica, sans-serif;
+    font-family: var(--font1), Arial, Arial, Helvetica, sans-serif;
     hyphens: none;
     word-break: keep-all;
 }
