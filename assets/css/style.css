@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     pointer-events: auto;
-    background-color: var(--color3);
 }
 
 html {
@@ -46,6 +45,7 @@ li{
 /*TEXT*/
 article{
     display: flex;
+    width: 100vw;
 }
 .section-text {
     width: 50vw;
